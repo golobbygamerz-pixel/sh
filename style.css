@@ -1,22 +1,18 @@
 
-:root {
-  --pink: #e9a9bf;
-  --dark-pink: #c77c9b;
-  --light: #fff7fa;
-  --white: #ffffff;
-  --text: #624654;
-  --muted: #a78a96;
-}
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --pink: #c85b83;
+  --dark-pink: #8f294f;
+  --light: #fffafb;
+  --white: #ffffff;
+  --text: #171217;
+  --muted: #81717a;
+  --black: #171217;
 }
 
 body {
-  background: var(--light);
-  color: var(--text);
+  background: #fffafb;
+  color: var(--black);
   font-family: 'DM Sans', sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
@@ -28,10 +24,11 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 10% 15%, #f8dce7 0, transparent 35%),
-    radial-gradient(circle at 90% 80%, #f6dce7 0, transparent 35%);
+    radial-gradient(circle at 10% 10%, #f8dce7 0, transparent 35%),
+    radial-gradient(circle at 90% 85%, #f3d1df 0, transparent 35%);
   z-index: -1;
 }
+
 
 .scene {
   display: none;
