@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rihan × Shrejal | Our Little Story</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  background:#fff8fa;
+  color:#583c49;
+  font-family:'Poppins',sans-serif;
+  overflow-x:hidden;
+}
+
+.page{
+  min-height:100vh;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  padding:25px;
+  animation:fade .8s ease;
+}
+
+.page.active{display:flex}
+
+h1,h2{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+}
+
+h1{font-size:clamp(38px,10vw,58px)}
+h2{font-size:34px}
+
+p{
+  line-height:1.9;
+  font-size:14px;
+  margin:18px 0;
+  color:#896d79;
+}
+
+button{
+  border:0;
+  padding:14px 30px;
+  border-radius:40px;
+  background:#eaa9c1;
+  color:white;
+  font-family:inherit;
+  font-size:14px;
+  cursor:pointer;
+  margin-top:20px;
+  transition:.3s;
+}
+
+button:active{transform:scale(.95)}
+
+.small{
+  font-size:11px;
+  letter-spacing:3px;
+  color:#cf8fa9;
+  margin-bottom:20px;
+}
+
+/* ENVELOPE */
+
+.envelope{
+  width:230px;
+  height:145px;
+  background:#f2bfd0;
+  position:relative;
+  border-radius:5px;
+  cursor:pointer;
+  margin:55px 0 25px;
+  box-shadow:0 15px 35px #dba3b944;
+}
+
+.envelope:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#eaa9c1;
+  clip-path:polygon(0 0,100% 0,50% 65%);
+  z-index:2;
+}
+
+.seal{
+  position:absolute;
+  z-index:3;
+  top:53px;
+  left:calc(50% - 21px);
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#fff8fa;
+  color:#d88da9;
+  display:grid;
+  place-items:center;
+  font-size:22px;
+}
+
+.envelope-text{
+  font-size:12px;
+  letter-spacing:2px;
+}
+
+/* LETTER */
+
+.letter{
+  background:white;
+  padding:30px 24px;
+  max-width:390px;
+  width:100%;
+  border-radius:12px;
+  box-shadow:0 12px 40px #dca4ba30;
+}
+
+.story{
+  max-width:400px;
+  background:white;
+  padding:35px 25px;
+  border-radius:18px;
+  box-shadow:0 10px 35px #dca4ba25;
+}
+
+.heart{
+  color:#eaa9c1;
+  font-size:38px;
+  margin:15px;
+}
+
+.progress{
+  display:flex;
+  gap:6px;
+  margin:25px;
+}
+
+.dot{
+  height:5px;
+  width:35px;
+  border-radius:10px;
+  background:#f1d6e0;
+}
+
+.dot.on{background:#d98eaa}
+
+.proposal-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+#celebration{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:10;
+}
+
+.piece{
+  position:absolute;
+  top:-20px;
+  animation:fall 3s linear forwards;
+}
+
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(700deg);opacity:0}
+}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+
+<body>
+
+<div id="celebration"></div>
+
+<!-- STAGE 1 -->
+
+<section class="page active" id="p1">
+  <div class="small">A LITTLE SOMETHING FOR YOU</div>
+  <h1>Hey, Shrejal.</h1>
+  <p>I've been keeping something for you...</p>
+
+  <div class="envelope" onclick="next(2)">
+    <div class="seal">♥</div>
+  </div>
+
+  <div class="envelope-text">TAP TO OPEN YOUR LETTER</div>
+</section>
+
+<!-- STAGE 2 -->
+
+<section class="page" id="p2">
+  <div class="small">CHAPTER ONE</div>
+  <h2>It started at 4 AM...</h2>
+
+  <div class="heart">♡</div>
+
+  <div class="story">
+    <p>
+      Kabhi socha nahi tha ki ek random 4 AM conversation
+      meri life ki itni special memory ban jayegi.
+    </p>
+    <p>
+      Ek normal si video chat, kuch random conversations,
+      aur phir tum...
+    </p>
+    <p>Who knew that one random moment could become so special?</p>
+  </div>
+
+  <div class="progress">
+    <div class="dot on"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+  <button onclick="next(3)">Continue our story →</button>
+</section>
+
+<!-- STAGE 3 -->
+
+<section class="page" id="p3">
+  <div class="small">A LETTER FROM RIHAN</div>
+  <h2>Dear Shrejal,</h2>
+
+  <div class="letter">
+    <p>
+      I don't know how to explain it perfectly,
+      but talking to you has become one of
+      my favourite parts of the day.
+    </p>
+
+    <p>
+      I love the little conversations,
+      the random laughs and all those
+      moments that make our story ours.
+    </p>
+
+    <p>
+      And today, I have one little question for you...
+    </p>
+
+    <div class="heart">♡</div>
+    <p>With love,<br><b>Rihan</b></p>
+  </div>
+
+  <button onclick="next(4)">One last thing... →</button>
+</section>
+
+<!-- STAGE 4 -->
+
+<section class="page" id="p4">
+  <div class="small">THE MOST IMPORTANT QUESTION</div>
+
+  <div class="heart">♥</div>
+
+  <h1>Shrejal,</h1>
+  <h2>Will you be mine? ❤️</h2>
+
+  <p>I'd love to create a thousand more memories with you.</p>
+
+  <div class="proposal-buttons">
+    <button onclick="celebrate()">YES! ❤️</button>
+    <button onclick="notNow()">I need a moment</button>
+  </div>
+
+  <p id="answer"></p>
+</section>
+
+<script>
+function next(number){
+  document.querySelectorAll('.page').forEach(p=>{
+    p.classList.remove('active');
+  });
+
+  document.getElementById('p'+number).classList.add('active');
+
+  window.scrollTo(0,0);
+}
+
+function notNow(){
+  document.getElementById('answer').innerText=
+  "Take your time. No pressure at all. ❤️";
+}
+
+function celebrate(){
+  document.getElementById('p4').innerHTML=`
+    <div class="small">A NEW CHAPTER BEGINS</div>
+    <div class="heart">♥</div>
+    <h1>YAYYYY!</h1>
+    <h2>Our story continues ❤️</h2>
+    <p>Here's to all the memories waiting for us.</p>
+    <h2>Rihan × Shrejal</h2>
+  `;
+
+  const area=document.getElementById('celebration');
+
+  for(let i=0;i<100;i++){
+    const piece=document.createElement('span');
+    piece.className='piece';
+    piece.innerText=['♥','♡','✦','🎀'][Math.floor(Math.random()*4)];
+    piece.style.left=Math.random()*100+'%';
+    piece.style.animationDelay=Math.random()*2+'s';
+    piece.style.fontSize=(12+Math.random()*18)+'px';
+    area.appendChild(piece);
+  }
+}
+</script>
+
+</body>
+</html>
