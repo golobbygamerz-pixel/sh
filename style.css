@@ -1,4 +1,9 @@
 
+/* =====================================
+   RIHAN × SHREJAL
+   PREMIUM ROMANTIC DESIGN
+   BLACK × WHITE × PINK
+===================================== */
 
 :root {
   --pink: #c85b83;
@@ -8,6 +13,13 @@
   --text: #171217;
   --muted: #81717a;
   --black: #171217;
+  --burgundy: #54132e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -29,6 +41,9 @@ body::before {
   z-index: -1;
 }
 
+/* =====================================
+   SCENES
+===================================== */
 
 .scene {
   display: none;
@@ -76,22 +91,27 @@ em {
   max-width: 310px;
 }
 
+/* =====================================
+   MUSIC BUTTON
+===================================== */
+
 .music-toggle {
   position: fixed;
   top: 17px;
   right: 15px;
   z-index: 50;
-  background: white;
-  border: 1px solid #f0d3df;
-  color: var(--dark-pink);
+  background: #171217;
+  border: 1px solid var(--pink);
+  color: white;
   border-radius: 30px;
   padding: 10px 15px;
   font-size: 11px;
   font-family: inherit;
 }
 
-
-/* PREMIUM 3D ENVELOPE */
+/* =====================================
+   PREMIUM 3D ENVELOPE
+===================================== */
 
 .envelope-area {
   padding: 90px 0 55px;
@@ -128,7 +148,7 @@ em {
   box-shadow: inset 0 -8px 15px #8f294f20;
 }
 
-/* Paper inside */
+/* Letter inside envelope */
 
 .letter-preview {
   position: absolute;
@@ -153,7 +173,12 @@ em {
   transition: transform 1s .5s ease;
 }
 
-/* Front folded paper */
+.preview-heart {
+  font-size: 25px;
+  color: var(--dark-pink);
+}
+
+/* Front folds */
 
 .envelope-front {
   position: absolute;
@@ -226,7 +251,7 @@ em {
   font-size: 12px;
 }
 
-/* Opening animation */
+/* Envelope opening */
 
 .envelope.open .envelope-flap {
   transform: rotateX(180deg);
@@ -243,8 +268,9 @@ em {
   pointer-events: none;
 }
 
-
-/* LETTER */
+/* =====================================
+   LETTER
+===================================== */
 
 .paper {
   width: 100%;
@@ -290,9 +316,12 @@ em {
   font-size: 23px;
 }
 
-/* BUTTONS */
+/* =====================================
+   BUTTONS
+===================================== */
 
-.primary-btn, .secondary-btn {
+.primary-btn,
+.secondary-btn {
   border: none;
   padding: 15px 25px;
   border-radius: 35px;
@@ -304,22 +333,29 @@ em {
 }
 
 .primary-btn {
-  background: linear-gradient(135deg, #eeb6cb, #d98eaa);
+  background: linear-gradient(
+    135deg,
+    #c85b83,
+    #8f294f
+  );
   color: white;
-  box-shadow: 0 8px 20px #d58ba833;
+  box-shadow: 0 9px 25px #8f294f35;
 }
 
 .secondary-btn {
-  background: white;
-  color: #a77b8d;
-  border: 1px solid #f0d5df;
+  background: #171217;
+  color: white;
+  border: 1px solid #171217;
 }
 
-.primary-btn:active, .secondary-btn:active {
+.primary-btn:active,
+.secondary-btn:active {
   transform: scale(.96);
 }
 
-/* HEART REVEAL */
+/* =====================================
+   HEART REVEAL
+===================================== */
 
 .section-heading {
   font-size: clamp(32px, 8vw, 44px);
@@ -335,6 +371,8 @@ em {
   place-items: center;
 }
 
+/* Hidden photo */
+
 .heart-photo {
   position: absolute;
   width: 165px;
@@ -342,7 +380,7 @@ em {
   border: 5px solid white;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 12px 35px #c77c9b44;
+  box-shadow: 0 12px 35px #54132e55;
 }
 
 .heart-photo img {
@@ -351,6 +389,8 @@ em {
   object-fit: cover;
 }
 
+/* Dark glossy heart */
+
 .heart-visual {
   position: absolute;
   inset: 0;
@@ -358,7 +398,7 @@ em {
   align-items: center;
   justify-content: center;
   z-index: 2;
-  filter: drop-shadow(0 12px 14px #d78aa655);
+  filter: drop-shadow(0 14px 18px #59152f75);
 }
 
 .heart-half {
@@ -366,8 +406,22 @@ em {
   font-family: Arial, sans-serif;
   font-size: 190px;
   line-height: 1;
-  color: #eb9bb7;
-  transition: transform 1.5s cubic-bezier(.2,.8,.2,1);
+  transition:
+    transform 1.5s cubic-bezier(.2,.8,.2,1);
+}
+
+.heart-half span {
+  background: linear-gradient(
+    145deg,
+    #f48cac 0%,
+    #b52c59 45%,
+    #54132e 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+  text-shadow: 0 5px 15px #54132e30;
 }
 
 .left-half {
@@ -380,12 +434,14 @@ em {
   transform: translateX(0);
 }
 
+/* Opening heart */
+
 .heart-visual.opened .left-half {
-  transform: translate(-75px, -8px) rotate(-18deg);
+  transform: translate(-80px, -10px) rotate(-22deg);
 }
 
 .heart-visual.opened .right-half {
-  transform: translate(75px, -8px) rotate(18deg);
+  transform: translate(80px, -10px) rotate(22deg);
 }
 
 .heart-shine {
@@ -397,6 +453,8 @@ em {
   transform: translate(-25px, -42px) rotate(-35deg);
   pointer-events: none;
 }
+
+/* Reveal message */
 
 .reveal-message {
   display: none;
@@ -412,11 +470,14 @@ em {
   font-size: 32px;
 }
 
-/* PROPOSAL */
+/* =====================================
+   PROPOSAL
+===================================== */
 
-.proposal-heart, .celebration-heart {
+.proposal-heart,
+.celebration-heart {
   font-size: 75px;
-  color: var(--pink);
+  color: var(--dark-pink);
   margin: 20px;
   animation: pulse 1.5s infinite;
 }
@@ -424,6 +485,7 @@ em {
 .proposal-heading {
   font-size: clamp(38px, 10vw, 55px);
   line-height: 1.25;
+  color: #171217;
 }
 
 .proposal-actions {
@@ -451,7 +513,9 @@ em {
   font-size: 13px;
 }
 
-/* CONFETTI */
+/* =====================================
+   CONFETTI
+===================================== */
 
 .confetti {
   position: fixed;
@@ -468,8 +532,14 @@ em {
   }
 }
 
+/* =====================================
+   ANIMATIONS
+===================================== */
+
 @keyframes pulse {
-  50% { transform: scale(1.12); }
+  50% {
+    transform: scale(1.12);
+  }
 }
 
 @keyframes sceneIn {
@@ -477,13 +547,19 @@ em {
     opacity: 0;
     transform: translateY(18px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@media(max-width:380px) {
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media(max-width: 380px) {
+
   .paper {
     padding: 25px 20px;
   }
@@ -491,4 +567,19 @@ em {
   .heart-stage {
     transform: scale(.9);
   }
+
+  .envelope-area {
+    padding-top: 70px;
+  }
+
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
 }
