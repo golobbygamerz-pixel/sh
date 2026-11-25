@@ -583,3 +583,92 @@ em {
   }
 }
 }
+
+/* BIGGER HEART REVEAL FIX */
+
+.heart-stage {
+  width: 340px;
+  max-width: 95vw;
+  height: 340px;
+  position: relative;
+  margin: 35px auto 15px;
+  display: grid;
+  place-items: center;
+  overflow: visible;
+}
+
+/* PHOTO BEHIND HEART */
+
+.heart-photo {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid white;
+  border-radius: 16px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 15px 40px #54132e55;
+  z-index: 1;
+}
+
+.heart-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* BIG DARK PINK HEART */
+
+.heart-visual {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  filter: drop-shadow(0 15px 20px #59152f75);
+  transition: opacity 1s ease;
+}
+
+.heart-half {
+  position: absolute;
+  font-family: Arial, sans-serif;
+  font-size: 270px;
+  line-height: 1;
+  transition: transform 1.5s cubic-bezier(.2,.8,.2,1);
+}
+
+.heart-half span {
+  background: linear-gradient(
+    145deg,
+    #f48cac,
+    #b52c59 48%,
+    #54132e
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* SPLIT ANIMATION */
+
+.heart-visual.opened .left-half {
+  transform: translate(-115px, -10px) rotate(-22deg);
+}
+
+.heart-visual.opened .right-half {
+  transform: translate(115px, -10px) rotate(22deg);
+}
+
+@media(max-width:380px) {
+  .heart-stage {
+    transform: scale(.88);
+    margin: 15px auto;
+  }
+}
